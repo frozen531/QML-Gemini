@@ -14,13 +14,12 @@ Window {
 
     Gemini{
         id:gemini
-        onBegin: doSomething() // begin信号函数，响应doSomething()槽函数
+        onBegin: doSomething(Gemini.BALL_COLOR_RED) // begin信号函数，响应doSomething()槽函数，使用时是<用类名>.<枚举类型变量>
     }
-
     MouseArea{
         anchors.fill: parent
         onClicked: {
-            gemini.doSomething()
+            gemini.begin()
         }
     }
 }
