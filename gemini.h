@@ -22,6 +22,10 @@ public:
         BALL_COLOR_ALL
     };
 
+    Q_INVOKABLE void stop(){ // 如果想让QML调用C++类的成员函数，要使用宏Q_INVOKABLE
+        qDebug()<<"Gemini::stop() called";
+    }
+
 signals:
     void begin();
 
@@ -32,7 +36,6 @@ public slots:
             m_ballColor=ballColor;
             qDebug()<<"ball color changed";
         }
-
     }
 
 private:

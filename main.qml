@@ -19,7 +19,8 @@ Window {
     MouseArea{
         anchors.fill: parent
         onClicked: {
-            gemini.begin()
+            gemini.begin() // 会先响应begin()对应的后续响应函数
+            gemini.stop() // begin()对应的后续响应函数doSomething()响应完后才执行stop()
         }
     }
 }
